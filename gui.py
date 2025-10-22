@@ -410,12 +410,17 @@ def create_interface():
 
 
 if __name__ == "__main__":
+    import os
+    
     interface = create_interface()
+    
+    # Get port from environment (Railway sets PORT variable)
+    port = int(os.environ.get("PORT", 7860))
     
     # Launch with custom settings
     interface.launch(
         server_name="0.0.0.0",
-        server_port=7860,
+        server_port=port,
         share=False,
         show_error=True,
         quiet=False
