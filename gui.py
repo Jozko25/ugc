@@ -250,12 +250,12 @@ def create_interface():
                             
                             size_input = gr.Dropdown(
                                 choices=[
+                                    "720x1280",   # 720p vertical (portrait)
+                                    "1080x1920",  # 1080p vertical (portrait)
                                     "1280x720",   # 720p landscape
-                                    "1920x1080",  # 1080p landscape
-                                    "720x1280",   # 720p vertical
-                                    "1080x1920"   # 1080p vertical
+                                    "1920x1080"   # 1080p landscape
                                 ],
-                                value="1280x720",
+                                value="720x1280",
                                 label="Resolution"
                             )
                         
@@ -313,10 +313,10 @@ def create_interface():
                         gr.Markdown("### Current Configuration")
                         
                         config_display = gr.Markdown(f"""
-**OpenAI Model (Text):** `{settings.openai_model_text}`  
+**OpenAI Model (Text):** `{settings.openai_model_text}` (cheaper than gpt-4o)  
 **OpenAI Model (Video):** `{settings.openai_model_video}`  
 **Default Duration:** {settings.default_video_duration}s  
-**Default Size:** {settings.default_video_size}  
+**Default Size:** {settings.default_video_size} (portrait/vertical)  
 **Storage Type:** {settings.storage_type}  
 **Storage Path:** `{settings.storage_path}`  
 **Max Poll Attempts:** {settings.max_poll_attempts}  

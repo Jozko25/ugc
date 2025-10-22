@@ -10,12 +10,12 @@ class Settings(BaseSettings):
     
     # OpenAI Configuration
     openai_api_key: str = Field(..., validation_alias="OPENAI_API_KEY")
-    openai_model_text: str = Field(default="gpt-4o", validation_alias="OPENAI_MODEL_TEXT")
+    openai_model_text: str = Field(default="gpt-4o-mini", validation_alias="OPENAI_MODEL_TEXT")
     openai_model_video: str = Field(default="sora-2", validation_alias="OPENAI_MODEL_VIDEO")
     
     # Video Generation Settings
     default_video_duration: int = Field(default=8, validation_alias="DEFAULT_VIDEO_DURATION")
-    default_video_size: str = Field(default="1280x720", validation_alias="DEFAULT_VIDEO_SIZE")
+    default_video_size: str = Field(default="720x1280", validation_alias="DEFAULT_VIDEO_SIZE")
     max_poll_attempts: int = Field(default=60, validation_alias="MAX_POLL_ATTEMPTS")
     poll_interval_seconds: int = Field(default=10, validation_alias="POLL_INTERVAL_SECONDS")
     
