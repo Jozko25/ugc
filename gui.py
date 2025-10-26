@@ -240,12 +240,10 @@ def create_interface():
                         )
                         
                         with gr.Row():
-                            duration_input = gr.Slider(
-                                minimum=5,
-                                maximum=15,
+                            duration_input = gr.Radio(
+                                choices=[4, 8, 12],
                                 value=8,
-                                step=1,
-                                label="Duration (seconds - API limit: 15s)"
+                                label="Duration (seconds - API only supports 4, 8, or 12s)"
                             )
                             
                             size_input = gr.Dropdown(

@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     openai_model_text: str = Field(default="gpt-4o-mini", validation_alias="OPENAI_MODEL_TEXT")
     openai_model_video: str = Field(default="sora-2", validation_alias="OPENAI_MODEL_VIDEO")
     
-    # Video Generation Settings
+    # Video Generation Settings (Sora 2 only supports 4, 8, or 12 seconds)
     default_video_duration: int = Field(default=8, validation_alias="DEFAULT_VIDEO_DURATION")
     default_video_size: str = Field(default="720x1280", validation_alias="DEFAULT_VIDEO_SIZE")
     max_poll_attempts: int = Field(default=60, validation_alias="MAX_POLL_ATTEMPTS")
